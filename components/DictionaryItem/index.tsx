@@ -29,13 +29,14 @@ export default function DictionaryItem(props: DictionaryItemProps) {
                 <Text style={styles.tokiText}>
                     {word.entry.form}
                 </Text>
-            </View>
-            <View style={styles.definition}>
                 <Text style={styles.pos}>
                     {word.translations[0].title}.
                 </Text>
+            </View>
+            <View style={styles.definition}>
+
                 <Text style={styles.def}>
-                    {word.translations[0].forms}
+                    {word.translations[0].forms[0]}
                 </Text>
             </View>
         </View>
