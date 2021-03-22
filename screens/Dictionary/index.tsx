@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { View } from '../../components/Themed';
+import { View, Text } from '../../components/Themed';
 import { TextInput, FlatList } from 'react-native'
 import styles from './styles'
 import DictionaryItem from '../../components/DictionaryItem';
@@ -53,6 +53,7 @@ export default function DictionaryScreen() {
         renderItem={({ item }) => (
           <DictionaryItem word={item} />
         )}
+        ListEmptyComponent={() => <Text style={styles.empty}>No Words Found :(</Text>}
       />
       </View>
     </View>

@@ -11,8 +11,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#fff',
     padding: 10,
-    marginTop: '15%',
-    marginBottom: 5,
+    marginVertical: 5,
     borderRadius: 50,
     width: '95%',
     justifyContent: 'space-evenly',
@@ -32,6 +31,10 @@ const styles = StyleSheet.create({
   }, 
   list:{
     flex: 1
+  },
+  empty:{
+    margin: 100,
+    fontSize: 20
   }
 });
 

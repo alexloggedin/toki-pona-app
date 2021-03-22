@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
       flex: 3
     },
     pos:{
-      fontWeight: 'bold'
+      fontWeight: 'normal'
     },
     def:{
 

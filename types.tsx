@@ -9,7 +9,7 @@ export type BottomTabParamList = {
 };
 
 export type DictionaryParamList = {
-  DictionaryScreen: undefined;
+  Dictionary: undefined;
 };
 
 export type TabTwoParamList = {

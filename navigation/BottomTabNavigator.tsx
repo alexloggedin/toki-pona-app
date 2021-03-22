@@ -50,9 +50,9 @@ function TabOneNavigator() {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="DictionaryScreen"
+        name="Dictionary"
         component={DictionaryScreen}
-        options={{ headerShown: false }}
+        options={{ headerShown: true }}
       />
     </TabOneStack.Navigator>
   );
