@@ -7,7 +7,11 @@ import VocabTable from '../../components/VocabTable'
 import styles from './styles'
 import YoutubePlayer from 'react-native-youtube-iframe'
 
-export default function LessonScreen() {
+interface LessonScreenProps{
+    LessonId: Number
+}
+
+export default function LessonScreen(props: LessonScreenProps) {
     const [playing, setPlaying] = React.useState(false);
     const [hidden, setHidden] = React.useState(false)
 

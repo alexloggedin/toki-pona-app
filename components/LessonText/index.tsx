@@ -34,7 +34,7 @@ export default function LessonText(props: LessonTextProps) {
             }
 
             return (
-                <View style={styles.textBox}>
+                <View key={i} style={styles.textBox}>
                     <View style={spacer}>
                     </View>
                     <Text key={i} style={textStyle}>

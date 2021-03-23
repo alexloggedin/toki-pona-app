@@ -24,7 +24,7 @@ export default function LessonItem(props: LessonItemProps) {
             <TouchableOpacity onPress={() => navigation.navigate('Lesson', {LessonId: props.lessonId})}>
                 <View style={[styles.imageContainer, { backgroundColor: Colors[colorScheme].offset }]}>
                     <Image
-                        source={require(props.imageUri)}
+                        source={require('../../assets/images/toki_pona_logo.png')}
                         style={styles.lessonImage}
                         resizeMode='contain'
                     />
