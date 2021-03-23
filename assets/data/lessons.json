@@ -1,0 +1,46 @@
+{
+    "lessons" : [
+        {
+            "id": 1,
+            "title": "Lesson One",
+            "subtitle": "Basic Sentences",
+            "toki_title" : " ",
+            "video_id": "",
+            "icon_uri" : "",
+            "vocab": [
+                {
+                    "term": "",
+                    "translations": []
+                }
+            ],
+            "exercise":[
+                {
+                "question": "",
+                "answer": ""
+                }
+            ],
+            "completed": "false"
+        }
+    ],
+    "template":{
+        "id": -1,
+        "title": "Lesson X",
+        "subtitle": "X and X",
+        "toki_title" : "A li A",
+        "video_id": "",
+        "icon_uri" : "",
+        "vocab": [
+            {
+                "term": "",
+                "translations": []
+            }
+        ],
+        "exercise":[
+            {
+            "question": "",
+            "answer": ""
+            }
+        ],
+        "completed": "false"
+    }
+}
