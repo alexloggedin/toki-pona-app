@@ -9,7 +9,7 @@ import useColorScheme from '../../hooks/useColorScheme';
 import styles from './styles'
 
 interface LessonItemProps {
-    lessonId: Number, 
+    lessonId: number, 
     imageUri: String, 
     title: String, 
     completed: Boolean
@@ -19,6 +19,7 @@ export default function LessonItem(props: LessonItemProps) {
 
     const navigation = useNavigation();
     const colorScheme = useColorScheme();
+    console.log('Item',props.lessonId)
     return (
         <View style={styles.lessonContainer}>
             <TouchableOpacity onPress={() => navigation.navigate('Lesson', {LessonId: props.lessonId})}>

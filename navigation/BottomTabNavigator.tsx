@@ -6,7 +6,7 @@ import * as React from 'react';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import DictionaryScreen from '../screens/Dictionary';
-import LessonScreen from '../screens/Lesson';
+import LessonScreen from '../screens/LessonScreen';
 import LessonListScreen from '../screens/LessonListScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, DictionaryParamList, LessonsParamList } from '../types';
@@ -73,7 +73,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="Lesson"
         component={LessonScreen}
-        options={{ headerTitle: 'Learn' }}
+        options={{ headerTitle: 'Lesson' }}
       />
     </TabTwoStack.Navigator>
   );

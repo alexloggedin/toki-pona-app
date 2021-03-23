@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginHorizontal: 5
+        marginHorizontal: 5,
     },
     titleContainer: {
         alignItems: 'center',

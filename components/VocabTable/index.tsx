@@ -5,15 +5,14 @@ import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
 
 interface VocabTableProps {
-    vocabulary:[
+    vocab:
         {
             term: String,
             translations: String[]
-        }
-    ]
+        }[]
 }
 
-export default function VocabTable() {
+export default function VocabTable(props: VocabTableProps) {
     const colorScheme = useColorScheme();
     return (
         <View style={styles.container}>
@@ -28,15 +27,13 @@ export default function VocabTable() {
                     </Text>
                 </View>
                 {
-                    vocab.map((item, index) => (
+                    props.vocab.map((item, index) => (
                         <View style={[styles.tableRow, { borderColor: Colors[colorScheme].tint }]} key={index}>
                             <Text style={[styles.ColOne, { borderColor: Colors[colorScheme].tint }]}>
                                 {item.term}
                             </Text>
                             <Text style={[styles.ColTwo, { borderColor: Colors[colorScheme].tint }]}>
-                                {item.translations.map((w, i) => (
-                                    <Text key={i}>{w}, </Text>
-                                ))}
+                                {item.translations}
                             </Text>
                         </View>
                     ))
@@ -45,10 +42,3 @@ export default function VocabTable() {
         </View>
     )
 }
-
-const vocab = [
-    {
-        term: "mi",
-        translations: ["I", "me", "us"]
-    }
-]

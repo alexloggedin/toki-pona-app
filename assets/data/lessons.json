@@ -1,46 +1,120 @@
 {
-    "lessons" : [
+    "lessons": [
         {
             "id": 1,
             "title": "Lesson One",
             "subtitle": "Basic Sentences",
-            "toki_title" : " ",
-            "video_id": "",
-            "icon_uri" : "",
+            "toki_title": "$Coming Soon$",
+            "video_id": "4L-dvvng4Zc",
+            "icon_uri": "None Yet",
             "vocab": [
+                {"term":"mi","translations":"I, me, us"},
+                {"term":"sina","translations":"you"},
+                {"term":"ona","translations":"he, she, they, it"},
+                {"term":"li","translations":"(between subj. and verb/adj.)"},
+                {"term":"pona","translations":"good, simple, to improve, to fix"},
+                {"term":"ike","translations":"bad, evil, complex, unnecessary"},
+                {"term":"suli","translations":"big, great, important, to grow"},
+                {"term":"lili","translations":"small, few, young, to shrink"},
+                {"term":"kili","translations":"fruit, vegetable, mushroom"},
+                {"term":"soweli","translations":"land mammal, animal"}
+            ],
+            "exercise": [
                 {
-                    "term": "",
-                    "translations": []
+                    "question": "",
+                    "answer": ""
                 }
             ],
-            "exercise":[
-                {
-                "question": "",
-                "answer": ""
-                }
-            ],
-            "completed": "false"
+            "completed": "false",
+            "lesson": [
+                "Let's start with the most basic sentence structure in toki pona:",
+                "",
+                "> [noun] li [noun / adjective].",
+                "",
+                "In English, this would mean:",
+                "",
+                "> [Noun] is (a) [noun].",
+                "",
+                "or ",
+                "",
+                "> [Noun] is [adjective].",
+                "",
+                "For example:",
+                "",
+                "> ona li suli. - (He/she/it/they) is (big/great/important).",
+                "",
+                "As you can see, a single word can have multiple related meanings. In practical",
+                "usage, both \"ona\" and \"suli\" will be more clear based on context.",
+                "",
+                "> kili li pona. - (Fruit/vegetable/mushroom)(s) (is/are) good.",
+                "",
+                "And in this case, it doesn't make a lot of sense to use any meaning of \"pona\"",
+                "other than \"good\".",
+                "",
+                "There is an exception to the rule. If the subject is \"mi\" or \"sina\", then it is",
+                "not necessary to add the word \"li\". So, instead of",
+                "",
+                "> sina li suli. - You are important.",
+                "",
+                "it's",
+                "",
+                "> sina suli. - You are important.",
+            ]
         }
     ],
-    "template":{
+    "template": {
         "id": -1,
         "title": "Lesson X",
         "subtitle": "X and X",
-        "toki_title" : "A li A",
+        "toki_title": "A li A",
         "video_id": "",
-        "icon_uri" : "",
+        "icon_uri": "",
         "vocab": [
             {
                 "term": "",
-                "translations": []
+                "translations": ""
             }
         ],
-        "exercise":[
+        "exercise": [
             {
-            "question": "",
-            "answer": ""
+                "question": "",
+                "answer": ""
             }
         ],
-        "completed": "false"
+        "completed": "false",
+        "lesson": [
+            "Let's start with the most basic sentence structure in toki pona:",
+            "",
+            "> [noun] li [noun / adjective].",
+            "",
+            "In English, this would mean:",
+            "",
+            "> [Noun] is (a) [noun].",
+            "",
+            "or ",
+            "",
+            "> [Noun] is [adjective].",
+            "",
+            "For example:",
+            "",
+            "> ona li suli. - (He/she/it/they) is (big/great/important).",
+            "",
+            "As you can see, a single word can have multiple related meanings. In practical",
+            "usage, both \"ona\" and \"suli\" will be more clear based on context.",
+            "",
+            "> kili li pona. - (Fruit/vegetable/mushroom)(s) (is/are) good.",
+            "",
+            "And in this case, it doesn't make a lot of sense to use any meaning of \"pona\"",
+            "other than \"good\".",
+            "",
+            "There is an exception to the rule. If the subject is \"mi\" or \"sina\", then it is",
+            "not necessary to add the word \"li\". So, instead of",
+            "",
+            "> sina li suli. - You are important.",
+            "",
+            "it's",
+            "",
+            "> sina suli. - You are important.",
+        ]
     }
 }

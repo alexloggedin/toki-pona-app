@@ -20,25 +20,3 @@ export default function LessonListScreen() {
         </View>
     )
 }
-
-const lessonData = {
-    id: -1,
-    title: "Lesson X",
-    subtitle: "X and X",
-    toki_title: "A li A",
-    video_id: "",
-    icon_uri: "",
-    vocab: [
-        {
-            "term": "",
-            "translations": []
-        }
-    ],
-    exercise: [
-        {
-            "question": "",
-            "answer": ""
-        }
-    ],
-    completed: false
-}
