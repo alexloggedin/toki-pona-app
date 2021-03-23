@@ -4,32 +4,19 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { View, Text } from '../../components/Themed'
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
-import LessonScreen from '../Lesson';
+import LessonItem from '../../components/LessonItem';
 import styles from './styles'
+import {LessonsParamList} from '../../types'
+import { useNavigation } from '@react-navigation/native';
+// Make import to call in data for flatlist
 
 export default function LessonListScreen() {
     return (
         <View style={[styles.container]}>
-            <LessonScreen />
-        </View>
-    )
-}
-
-
-function LessonItem() {
-    const colorScheme = useColorScheme();
-    return (
-        <View style={styles.lessonContainer}>
-            <TouchableOpacity onPress={() => console.warn('Pressed')}>
-                <View style={[styles.imageContainer, { backgroundColor: Colors[colorScheme].offset }]}>
-                    <Image
-                        source={require('../../assets/images/toki_pona_logo.png')}
-                        style={styles.lessonImage}
-                        resizeMode='contain'
-                    />
-                </View>
-            </TouchableOpacity>
-            <Text style={styles.lessonTitle}>Lesson 1</Text>
+            <LessonItem lessonId={1} 
+            imageUri={'../../assets/images/toki_pona_logo.png'} 
+            title={'Lesson X'} 
+            completed={false}/>
         </View>
     )
 }
@@ -53,5 +40,5 @@ const lessonData = {
             "answer": ""
         }
     ],
-    "completed": "false"
+    completed: false
 }

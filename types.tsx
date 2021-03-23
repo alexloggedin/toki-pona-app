@@ -13,5 +13,6 @@ export type DictionaryParamList = {
 };
 
 export type LessonsParamList = {
-  Lessons: undefined;
+  LessonsList: undefined;
+  Lesson: {LessonId: Number};
 };

@@ -5,20 +5,30 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        margin: 20
+    },
+    title:{
+        fontSize: 30,
+        margin: 10
     },
     table:{
-        borderWidth: 3,
+        borderWidth: 1,
     },
     tableRow:{
-        flexDirection: 'row'
+        flexDirection: 'row',
+        width: 300
     },
     ColOne:{
+        fontSize: 15,
         borderWidth: 1,
-        padding: 10
+        padding: 10,
+        flex: 1
     },
     ColTwo:{
+        fontSize: 15,
         borderWidth: 1,
-        padding: 10
+        padding: 10,
+        flex: 3
     }
 })
 

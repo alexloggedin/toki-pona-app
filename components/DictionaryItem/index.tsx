@@ -3,6 +3,9 @@ import { Ionicons } from '@expo/vector-icons';
 import { TextInput } from 'react-native'
 import { View, Text } from '../Themed'
 import styles from './styles'
+import Colors from '../../constants/Colors';
+import useColorScheme from '../../hooks/useColorScheme';
+
 
 interface DictionaryItemProps {
     word: {
@@ -22,6 +25,7 @@ interface DictionaryItemProps {
 }
 
 export default function DictionaryItem(props: DictionaryItemProps) {
+    const colorScheme = useColorScheme();
     const {word} = props;
     return (
         <View style={styles.container}>
@@ -29,7 +33,7 @@ export default function DictionaryItem(props: DictionaryItemProps) {
                 <Text style={styles.tokiText}>
                     {word.entry.form}
                 </Text>
-                <Text style={styles.pos}>
+                <Text style={[styles.pos, {color: Colors[colorScheme].tint}]}>
                     {word.translations[0].title}.
                 </Text>
             </View>
@@ -41,20 +45,4 @@ export default function DictionaryItem(props: DictionaryItemProps) {
             </View>
         </View>
     )
-}
-
-
-const word = {
-    entry: {
-        id: 1,
-        form: "word"
-    },
-    translations: [{
-        title: "separator",
-        forms: ["A declarative sentence ends with a full stop. Don't use a full stop before or after the other separators 'e', 'la', 'li', 'pi', '.', '!', '?', ':'. "]
-    }],
-    tags: [],
-    contents: [],
-    variations: [],
-    relations: []
 }

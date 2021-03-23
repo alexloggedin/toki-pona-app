@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { View, Text } from '../../components/Themed';
-import { TextInput, FlatList } from 'react-native'
+import { TextInput, FlatList, Switch } from 'react-native'
 import styles from './styles'
 import DictionaryItem from '../../components/DictionaryItem';
 import dictionary from '../../assets/data/dictionary.json'
@@ -9,7 +9,12 @@ import dictionary from '../../assets/data/dictionary.json'
 export default function DictionaryScreen() {
   const [search, setSearch] = React.useState('');
   const [filteredDataSource, setFilteredDataSource] = React.useState(dictionary.words);
-  const [includePhrases, setIncludePhrases] = React.useState(true)
+  const [inToki, setInToki] = React.useState(false)
+
+  const toggle = () => {
+    setInToki(!inToki)
+    searchFilterFunction(search);
+  }
 
   const searchFilterFunction = (text: string) => {
     // Check if searched text is not blank
@@ -20,7 +25,7 @@ export default function DictionaryScreen() {
         const def = item.translations[0].forms[0]
         const hasToki = toki.includes(text)
         const hasDef = def.includes(text)
-        return hasDef || hasToki;
+        return (hasDef && !inToki) || hasToki;
       });
       setFilteredDataSource(newData);
       setSearch(text);
@@ -39,22 +44,33 @@ export default function DictionaryScreen() {
         <TextInput
           style={styles.input}
           onChangeText={searchFilterFunction}
+          on
           value={search}
           placeholder='Search'
           placeholderTextColor='gray'
           autoCorrect={false}
           returnKeyType='search'
         />
+        <View>
+        <Switch
+          trackColor={{ false: "#767577", true: "#81b0ff" }}
+          thumbColor={inToki ? "#f5dd4b" : "#f4f3f4"}
+          ios_backgroundColor="#3e3e3e"
+          onValueChange={toggle}
+          value={inToki}
+        />
+        </View>
       </View>
       <View style={styles.list}>
-      <FlatList 
-        data={filteredDataSource}
-        keyExtractor={(word) => word.entry.id.toString()}
-        renderItem={({ item }) => (
-          <DictionaryItem word={item} />
-        )}
-        ListEmptyComponent={() => <Text style={styles.empty}>No Words Found :(</Text>}
-      />
+        <FlatList
+          ListHeaderComponent={() => <Text style={{alignSelf: 'center'}}>Showing results for {inToki ? 'english and toki pona' : 'toki pona'}</Text> }
+          data={filteredDataSource}
+          keyExtractor={(word) => word.entry.id.toString()}
+          renderItem={({ item }) => (
+            <DictionaryItem word={item} />
+          )}
+          ListEmptyComponent={() => <Text style={styles.empty}>No Words Found :(</Text>}
+        />
       </View>
     </View>
   );
