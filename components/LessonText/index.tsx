@@ -26,7 +26,7 @@ export default function LessonText(props: LessonTextProps) {
             }
             let textStyle = {
                 fontStyle: 'normal',
-                fontSize: 20,
+                fontSize: 18,
                 backgroundColor: Colors[colorScheme].background,
                 justifyContent: 'center'
             }
@@ -37,6 +37,8 @@ export default function LessonText(props: LessonTextProps) {
                     spacer.marginRight = 10
                     textStyle.fontStyle = 'italic'
                     textStyle.fontSize = 16
+                    textStyle.backgroundColor = Colors[colorScheme].offset
+                    textStyle.padding = 4
                     break;
                 case '#':
                     line = line.substring(2)
