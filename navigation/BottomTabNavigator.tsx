@@ -73,7 +73,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="Lesson"
         component={LessonScreen}
-        options={{ headerTitle: 'Lesson' }}
+        options={({route}) => ({ headerTitle: `Lesson  ${route.params.LessonId+1}` })}
       />
     </TabTwoStack.Navigator>
   );

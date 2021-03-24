@@ -9,29 +9,35 @@ import useColorScheme from '../../hooks/useColorScheme';
 import styles from './styles'
 
 interface LessonItemProps {
-    lessonId: number, 
-    imageUri: String, 
-    title: String, 
-    completed: Boolean
+    lessonId: number,
+    imageUri: String,
+    title: String,
+    subtitle: String
 }
 
 export default function LessonItem(props: LessonItemProps) {
 
     const navigation = useNavigation();
     const colorScheme = useColorScheme();
-    console.log('Item',props.lessonId)
     return (
-        <View style={styles.lessonContainer}>
-            <TouchableOpacity onPress={() => navigation.navigate('Lesson', {LessonId: props.lessonId})}>
-                <View style={[styles.imageContainer, { backgroundColor: Colors[colorScheme].offset }]}>
+        <View style={[styles.container,  { backgroundColor: Colors[colorScheme].offset }]}>
+            <TouchableOpacity onPress={() => navigation.navigate('Lesson', { LessonId: props.lessonId })} style={styles.content}>
+                <View style={[styles.imageContainer, { backgroundColor: Colors[colorScheme].offset, borderColor: Colors[colorScheme].tint }]}>
                     <Image
                         source={require('../../assets/images/toki_pona_logo.png')}
                         style={styles.lessonImage}
                         resizeMode='contain'
                     />
                 </View>
+                <View style={[styles.titleContainer,  { backgroundColor: Colors[colorScheme].offset }]}>
+                    <Text style={styles.title}>
+                        {props.title}
+                    </Text>
+                    <Text style={styles.subtitle}>
+                        {props.subtitle}
+                    </Text>
+                </View>
             </TouchableOpacity>
-            <Text style={styles.lessonTitle}>{props.title}</Text>
         </View>
     )
 }

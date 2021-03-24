@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        margin: 20
+        margin: 10
     },
     title:{
         fontSize: 30,
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
     tableRow:{
         flexDirection: 'row',
-        width: 300
+        width: '100%'
     },
     ColOne:{
         fontSize: 15,

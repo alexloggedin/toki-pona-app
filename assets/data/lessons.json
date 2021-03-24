@@ -2,12 +2,15 @@
     "lessons": [
         {
             "id": 0,
-            "title": "Lesson Zero",
-            "subtitle": "spelling and pronunciation",
+            "title": "Lesson One",
+            "subtitle": "the basics",
             "toki_title": "$Coming Soon$",
-            "video_id": "",
+            "video_id": "4L-dvvng4Zc",
             "icon_uri": "none yet",
             "lesson": [
+                "",
+                "## Spelling and Punctuation",
+                "",
                 "The language *toki pona* only uses 14 letters of the Latin alphabet, and all of",
                 "these letters have consistent pronunciations.",
                 "",
@@ -52,55 +55,10 @@
                 "toki pona's sounds were chosen to be common to many languages and easy to",
                 "distinguish.",
                 "",
-                "All toki pona words are pronounced with stress on their first syllable."
-            ],
-            "vocab": [],
-            "exercise": {
-                "type": "p",
-                "problems": [
-                    {
-                        "question": "jaki",
-                        "answer": "yucky"
-                    },
-                    {
-                        "question": "jelo",
-                        "answer": "yellow"
-                    },
-                    {
-                        "question": "ken",
-                        "answer": "can"
-                    },
-                    {
-                        "question": "mani",
-                        "answer": "money"
-                    },
-                    {
-                        "question": "mi",
-                        "answer": "me"
-                    },
-                    {
-                        "question": "mun",
-                        "answer": "moon"
-                    },
-                    {
-                        "question": "tu",
-                        "answer": "two"
-                    },
-                    {
-                        "question": "wan",
-                        "answer": "one"
-                    }
-                ]
-            }
-        },
-        {
-            "id": 1,
-            "title": "Lesson One",
-            "subtitle": "basic sentences",
-            "toki_title": "$Coming Soon$",
-            "video_id": "4L-dvvng4Zc",
-            "icon_uri": "none yet",
-            "lesson": [
+                "All toki pona words are pronounced with stress on their first syllable.",
+                "",
+                "## Basic Structure",
+                "",
                 "Let's start with the most basic sentence structure in toki pona:",
                 "",
                 "> [noun] li [noun / adjective].",
@@ -203,7 +161,7 @@
             }
         },
         {
-            "id": 2,
+            "id": 1,
             "title": "Lesson Two",
             "subtitle": "adjectives",
             "toki_title": "$Coming Soon$",
@@ -347,7 +305,7 @@
             }
         },
         {
-            "id": 3,
+            "id": 2,
             "title": "Lesson Three",
             "subtitle": "verbs and objects",
             "toki_title": "$Coming Soon$",
@@ -499,7 +457,7 @@
             }
         },
         {
-            "id": 4,
+            "id": 3,
             "title": "Lesson Four",
             "subtitle": "more vocabulary",
             "toki_title": "$Coming Soon$",
@@ -666,7 +624,7 @@
             }
         },
         {
-            "id": 5,
+            "id": 4,
             "title": "Lesson Five",
             "subtitle": "this and that",
             "toki_title": "$Coming Soon$",
@@ -814,7 +772,7 @@
             }
         },
         {
-            "id": 6,
+            "id": 5,
             "title": "Lesson Six",
             "subtitle": "prepositions and locations",
             "toki_title": "$Coming Soon$",
@@ -1009,9 +967,9 @@
             }
         },
         {
-            "id": 7,
+            "id": 6,
             "title": "Lesson Seven",
-            "subtitle": "interjections, questions, commands and names",
+            "subtitle": "questions and commands",
             "toki_title": "$Coming Soon$",
             "video_id": "tYZxkQc27Xw",
             "icon_uri": "none yet",
@@ -1257,7 +1215,7 @@
             }
         },
         {
-            "id": 8,
+            "id": 7,
             "title": "Lesson Eight",
             "subtitle": "colorful language",
             "toki_title": "$Coming Soon$",
@@ -1403,9 +1361,9 @@
             }
         },
         {
-            "id": 9,
+            "id": 8,
             "title": "Lesson Nine",
-            "subtitle": "complex adjectives and contexts",
+            "subtitle": "complex adjectives & contexts",
             "toki_title": "$Coming Soon$",
             "video_id": "hi9wo9XrZ24",
             "icon_uri": "none yet",
@@ -1591,7 +1549,7 @@
             }
         },
         {
-            "id": 10,
+            "id": 9,
             "title": "Lesson Ten",
             "subtitle": "pre-verbs and time",
             "toki_title": "$Coming Soon$",
@@ -1799,7 +1757,7 @@
             }
         },
         {
-            "id": 11,
+            "id": 10,
             "title": "Lesson Eleven",
             "subtitle": "numbers",
             "toki_title": "$Coming Soon$",
@@ -1997,13 +1955,16 @@
             }
         },
         {
-            "id": 12,
+            "id": 11,
             "title": "Lesson Twelve",
             "subtitle": "the final countdown",
             "toki_title": "$Coming Soon$",
             "video_id": "wT4QCdmHEjU",
             "icon_uri": "none yet",
             "lesson": [
+                "",
+                "These are the final 10 official words in toki pona. They all function in the",
+                "same way as other words mentioned before, with one exception.",
                 "## taso",
                 "",
                 "The word \"taso\" can be used as a regular adjective to mean \"only\" or \"just\":",

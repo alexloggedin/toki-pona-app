@@ -5,10 +5,13 @@ import { TextInput, FlatList, Switch } from 'react-native'
 import styles from './styles'
 import DictionaryItem from '../../components/DictionaryItem';
 import dictionary from '../../assets/data/dictionary.json'
+import Colors from '../../constants/Colors';
+import useColorScheme from '../../hooks/useColorScheme';
 
 export default function DictionaryScreen() {
+  const colorScheme = useColorScheme();
   const [search, setSearch] = React.useState('');
-  const [filteredDataSource, setFilteredDataSource] = React.useState(dictionary.words);
+  const [filteredDataSource, setFilteredDataSource] = React.useState(dictionary.words.slice(8));
   const [inToki, setInToki] = React.useState(false)
 
   const toggle = () => {
@@ -44,14 +47,12 @@ export default function DictionaryScreen() {
         <TextInput
           style={styles.input}
           onChangeText={searchFilterFunction}
-          on
           value={search}
           placeholder='Search'
           placeholderTextColor='gray'
           autoCorrect={false}
           returnKeyType='search'
         />
-        <View>
         <Switch
           trackColor={{ false: "#767577", true: "#81b0ff" }}
           thumbColor={inToki ? "#f5dd4b" : "#f4f3f4"}
@@ -59,17 +60,16 @@ export default function DictionaryScreen() {
           onValueChange={toggle}
           value={inToki}
         />
-        </View>
       </View>
       <View style={styles.list}>
         <FlatList
-          ListHeaderComponent={() => <Text style={{alignSelf: 'center'}}>Showing results for {inToki ? 'english and toki pona' : 'toki pona'}</Text> }
+          ListHeaderComponent={() => <Text style={{ alignSelf: 'center' }}>Showing results for {inToki ? 'toki pona' : 'english and toki pona'}</Text>}
           data={filteredDataSource}
           keyExtractor={(word) => word.entry.id.toString()}
           renderItem={({ item }) => (
             <DictionaryItem word={item} />
           )}
-          ListEmptyComponent={() => <Text style={styles.empty}>No Words Found :(</Text>}
+          ListEmptyComponent={() => <Text style={styles.empty}>No Words Found </Text>}
         />
       </View>
     </View>

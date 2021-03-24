@@ -37,8 +37,7 @@ function convert(num) {
     }
 }
 const subtitles = [
-    `spelling and pronunciation`,
-    `basic sentences`,
+    `the basics`,
     `adjectives`,
     `verbs and objects`,
     `more vocabulary`,
@@ -53,7 +52,6 @@ const subtitles = [
 ]
 
 const videoIds = [
-    ``,
     `4L-dvvng4Zc`,
     `KTbnGX6G_P4`,
     `R7GOqki9vVE`,
@@ -69,19 +67,6 @@ const videoIds = [
 ]
 
 const exercises = [
-    {
-        type: 'p',
-        problems: [
-            { question: "jaki", answer: "yucky" },
-            { question: "jelo", answer: "yellow" },
-            { question: "ken", answer: "can" },
-            { question: "mani", answer: "money" },
-            { question: "mi", answer: "me" },
-            { question: "mun", answer: "moon" },
-            { question: "tu", answer: "two" },
-            { question: "wan", answer: "one" }
-        ]
-    },
     {
         type: 't',
         problems: [
@@ -268,7 +253,6 @@ const exercises = [
 ]
 
 const vocab = [
-    [],
     [
         {"word":"mi","meaning":"I, me, us"},
         {"word":"sina","meaning":"you"},
@@ -433,7 +417,10 @@ example = {
 }
 
 const texts = [
-    `The language *toki pona* only uses 14 letters of the Latin alphabet, and all of
+    `
+    ## Spelling and Punctuation
+    
+    The language *toki pona* only uses 14 letters of the Latin alphabet, and all of
     these letters have consistent pronunciations. 
     
     These are: a,e,i,j,k,l,m,n,o,p,s,t,u,w.
@@ -477,8 +464,11 @@ const texts = [
     toki pona's sounds were chosen to be common to many languages and easy to
     distinguish.
     
-    All toki pona words are pronounced with stress on their first syllable.`,
-    `Let's start with the most basic sentence structure in toki pona:
+    All toki pona words are pronounced with stress on their first syllable.
+
+    ## Basic Structure
+
+    Let's start with the most basic sentence structure in toki pona:
 
     > [noun] li [noun / adjective].
     
@@ -1322,7 +1312,10 @@ const texts = [
     
     > lete li lon. -- It is cold.
     `,
-    `## taso
+    `
+    These are the final 10 official words in toki pona. They all function in the
+    same way as other words mentioned before, with one exception.
+    ## taso
 
     The word "taso" can be used as a regular adjective to mean "only" or "just":
     
@@ -1344,8 +1337,8 @@ let data = {
     lessons: []
 }
 
-for (i = 0; i <= 12; i++) {
-    let titleindex = convert(i);
+for (i = 0; i <= 11; i++) {
+    let titleindex = convert(i+1);
     titleindex = titleindex.charAt(0).toUpperCase() + titleindex.slice(1)
     const title = `Lesson ${titleindex}`
     const lesson = texts[i].split('\n').map((s)=> (s.trim()))
@@ -1361,7 +1354,6 @@ for (i = 0; i <= 12; i++) {
         exercise: exercises[i]
     }
 }
-console.log(data)
 const fs = require('fs');
 
 const json = JSON.stringify(data, null, 4);

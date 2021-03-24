@@ -1,30 +1,56 @@
 import { StyleSheet } from "react-native"
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    lessonContainer:{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    imageContainer:{
+        margin: 10,
+        width: '95%',
         padding: 10,
-        borderWidth: 4,
-        borderColor: 'green',
-        borderRadius: 100,
+        borderRadius: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
-    lessonImage:{
-        width: 100,
-        height: 100,
+    content: {
+        flexDirection: 'row',
+        alignItems: 'center',
+
+    },
+    imageContainer: {
+        padding: 10,
+        borderWidth: 3,
+        borderRadius: 100,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+    },
+    lessonImage: {
+        width: 50,
+        height: 50,
         margin: 16
     },
-    lessonTitle:{
-        fontSize: 20,
+    titleContainer: {
+        marginLeft: 20
+    },
+    title: {
+        fontSize: 25,
         fontWeight: 'bold',
-        margin: 20
+    },
+    subtitle: {
+        fontSize: 15,
+        fontWeight: "normal",
+        fontStyle: 'italic',
     }
 })
 

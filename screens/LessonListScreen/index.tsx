@@ -16,23 +16,16 @@ export default function LessonListScreen() {
         <View style={[styles.container]}>
             <FlatList
                 data={data}
-                keyExtractor={(item) => (item.id)}
-                renderItem={(item) => (
+                showsVerticalScrollIndicator={false}
+                keyExtractor={(item) => (item.id.toString())}
+                renderItem={({item}) => (
                 <LessonItem
-                    title={item.item.title}
-                    lessonId={item.item.id}
-                    imageUri={item.item.icon_uri}
-                    completed={item.item.completed}
-                    
+                    title={item.title}
+                    subtitle={item.subtitle}
+                    lessonId={item.id}
+                    imageUri={item.icon_uri}
                 />)}
             />
         </View>
     )
-}
-
-interface LessonItemProps {
-    lessonId: number, 
-    imageUri: String, 
-    title: String, 
-    completed: Boolean
 }

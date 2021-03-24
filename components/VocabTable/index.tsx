@@ -7,8 +7,8 @@ import useColorScheme from '../../hooks/useColorScheme';
 interface VocabTableProps {
     vocab:
         {
-            term: String,
-            translations: String[]
+            word: string,
+            meaning: string
         }[]
 }
 
@@ -30,10 +30,10 @@ export default function VocabTable(props: VocabTableProps) {
                     props.vocab.map((item, index) => (
                         <View style={[styles.tableRow, { borderColor: Colors[colorScheme].tint }]} key={index}>
                             <Text style={[styles.ColOne, { borderColor: Colors[colorScheme].tint }]}>
-                                {item.term}
+                                {item.word}
                             </Text>
                             <Text style={[styles.ColTwo, { borderColor: Colors[colorScheme].tint }]}>
-                                {item.translations}
+                                {item.meaning}
                             </Text>
                         </View>
                     ))

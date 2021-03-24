@@ -10,7 +10,6 @@ interface LessonTextProps{
 
 export default function LessonText(props: LessonTextProps) {
     const colorScheme = useColorScheme();
-    console.log(props)
     const generateText = (text: String[]) => {
 
         return (text.map((e, i) => {
@@ -47,7 +46,6 @@ export default function LessonText(props: LessonTextProps) {
 
     return (
         <View style={styles.container}>
-            <Text>Lesson</Text>
             {generateText(props.text)}
         </View>
     )
