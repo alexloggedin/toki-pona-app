@@ -63,7 +63,7 @@ export default function DictionaryScreen() {
       </View>
       <View style={styles.list}>
         <FlatList
-          ListHeaderComponent={() => <Text style={{ alignSelf: 'center', marginBottom: 20 }}>Showing results for {inToki ? 'toki pona' : 'english and toki pona'}</Text>}
+          ListHeaderComponent={() => <Text style={{ alignSelf: 'center', margin: 20 }}>Showing results for {inToki ? 'toki pona' : 'english and toki pona'}</Text>}
           data={filteredDataSource}
           keyExtractor={(word) => word.entry.id.toString()}
           renderItem={({ item }) => (

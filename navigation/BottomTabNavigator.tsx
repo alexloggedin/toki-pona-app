@@ -76,7 +76,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="LessonList"
         component={LessonListScreen}
-        options={{ headerTitle: 'Learn' }}
+        options={{ headerTitle: 'Lessons' }}
       />
       <TabTwoStack.Screen
         name="Lesson"
