@@ -16,3 +16,7 @@ export type LessonsParamList = {
   LessonList: undefined;
   Lesson: {LessonId: number};
 };
+ export type PracticeParamList = {
+   PracticeMenu : undefined;
+   Practice: {LessonId: number}
+ }

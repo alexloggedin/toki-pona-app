@@ -28,8 +28,8 @@ export default function DictionaryItem(props: DictionaryItemProps) {
     const colorScheme = useColorScheme();
     const {word} = props;
     return (
-        <View style={styles.container}>
-            <View style={styles.toki}>
+        <View style={[styles.container,  { backgroundColor: Colors[colorScheme].offset }]}>
+            <View style={[styles.toki,   { backgroundColor: Colors[colorScheme].offset }]}>
                 <Text style={styles.tokiText}>
                     {word.entry.form}
                 </Text>
@@ -37,7 +37,7 @@ export default function DictionaryItem(props: DictionaryItemProps) {
                     {word.translations[0].title}.
                 </Text>
             </View>
-            <View style={styles.definition}>
+            <View style={[styles.definition,   { backgroundColor: Colors[colorScheme].offset }]}>
 
                 <Text style={styles.def}>
                     {word.translations[0].forms[0]}

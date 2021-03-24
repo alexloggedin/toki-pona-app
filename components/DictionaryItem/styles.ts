@@ -7,7 +7,18 @@ const styles = StyleSheet.create({
       padding: 10,
       borderRadius: 10,
       width: 375,
-      margin: 20
+      height: 100,
+      margin: 5,
+      flex: 1,
+      shadowColor: "#000",
+      shadowOffset: {
+          width: 0,
+          height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+
+      elevation: 5,
     },
     toki:{
       flex: 2

@@ -4,15 +4,21 @@ import { View, Text } from '../Themed'
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
 
-interface LessonTextProps{
+interface LessonTextProps {
     text: String[]
 }
 
 export default function LessonText(props: LessonTextProps) {
     const colorScheme = useColorScheme();
     const generateText = (text: String[]) => {
-
-        return (text.map((e, i) => {
+        return (text.map((line, i) => {
+            let textBox = {
+                flexDirection: 'row',
+                alignContent: 'center',
+                width: '95%',
+                marginHorizontal: 10,
+                marginVertical: 5
+            }
             let spacer = {
                 paddingHorizontal: 0,
                 marginRight: 0,
@@ -21,24 +27,48 @@ export default function LessonText(props: LessonTextProps) {
             let textStyle = {
                 fontStyle: 'normal',
                 fontSize: 20,
-                backgroundColor: Colors[colorScheme].background
+                backgroundColor: Colors[colorScheme].background,
+                justifyContent: 'center'
             }
-
-            if (e[0] === '>') {
-                e = e.substring(1)
-                spacer.paddingHorizontal=2
-                spacer.marginRight=10
-                textStyle.fontStyle = 'italic'
-                textStyle.fontSize = 16
+            switch (line[0]) {
+                case '>':
+                    line = line.substring(1)
+                    spacer.paddingHorizontal = 2
+                    spacer.marginRight = 10
+                    textStyle.fontStyle = 'italic'
+                    textStyle.fontSize = 16
+                    break;
+                case '#':
+                    line = line.substring(2)
+                    spacer.display = 'hidden'
+                    textStyle.fontWeight = 'bold'
+                    textStyle.padding = 10
+                    textStyle.borderRadius = 50
+                    textStyle.overflow = 'hidden'
+                    textStyle.fontSize = 20
+                    textStyle.justifyContent = 'center'
+                    textStyle.flex = 1,
+                    textStyle.textAlign = 'center'
+                    textStyle.color = 'black'
+                    textStyle.backgroundColor = Colors[colorScheme].tint
+                    break;
+                case '*':
+                    line = line.substring(1)
+                    spacer.paddingHorizontal = 2
+                    spacer.marginRight = 10
+                    textStyle.fontStyle = 'italic'
+                    textStyle.fontSize = 16
+                    break;
+                default:
+                    break;
             }
-
             return (
-                <View key={i} style={styles.textBox}>
+                <View key={i} style={textBox}>
                     <View style={spacer}>
                     </View>
                     <Text key={i} style={textStyle}>
-                            {e}
-                        </Text>
+                        {line}
+                    </Text>
                 </View>
             )
         }))

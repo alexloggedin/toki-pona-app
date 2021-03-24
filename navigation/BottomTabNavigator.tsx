@@ -1,4 +1,4 @@
-import { Ionicons, Fontisto } from '@expo/vector-icons';
+import { Ionicons, Fontisto, FontAwesome5 } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
@@ -9,7 +9,8 @@ import DictionaryScreen from '../screens/Dictionary';
 import LessonScreen from '../screens/LessonScreen';
 import LessonListScreen from '../screens/LessonListScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, DictionaryParamList, LessonsParamList } from '../types';
+import { BottomTabParamList, DictionaryParamList, LessonsParamList, PracticeParamList } from '../types';
+import PracticeMenu from '../screens/PracticeMenu';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -30,6 +31,13 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="Lessons"
         component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <FontAwesome5 name="brain" size={24} color={color} />,
+        }}
+      />
+      <BottomTab.Screen 
+        name="Practice"
+        component={TabThreeNavigator}
         options={{
           tabBarIcon: ({ color }) => <Fontisto name="lightbulb" size={30} color={color}/>,
         }}
@@ -77,4 +85,18 @@ function TabTwoNavigator() {
       />
     </TabTwoStack.Navigator>
   );
+}
+
+const TabThreeStack = createStackNavigator<PracticeParamList>();
+
+function TabThreeNavigator(){
+  return (
+    <TabThreeStack.Navigator>
+      <TabThreeStack.Screen 
+        name='PracticeMenu'
+        component={PracticeMenu}
+        options={{ headerTitle: 'Practice' }}
+      />
+    </TabThreeStack.Navigator>
+  )
 }

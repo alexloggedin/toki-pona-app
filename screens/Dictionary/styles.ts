@@ -8,10 +8,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   searchBar: {
+    overflow: 'hidden',
     flexDirection: 'row',
     backgroundColor: '#fff',
     padding: 10,
-    marginVertical: 20,
+    marginTop: 10,
     borderRadius: 50,
     width: '95%',
     justifyContent: 'space-evenly',

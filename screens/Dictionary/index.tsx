@@ -35,7 +35,7 @@ export default function DictionaryScreen() {
     } else {
       // Inserted text is blank
       // Update FilteredDataSource with masterDataSource
-      setFilteredDataSource(dictionary.words);
+      setFilteredDataSource(dictionary.words.slice(8));
       setSearch(text);
     }
   };
@@ -63,7 +63,7 @@ export default function DictionaryScreen() {
       </View>
       <View style={styles.list}>
         <FlatList
-          ListHeaderComponent={() => <Text style={{ alignSelf: 'center' }}>Showing results for {inToki ? 'toki pona' : 'english and toki pona'}</Text>}
+          ListHeaderComponent={() => <Text style={{ alignSelf: 'center', marginBottom: 20 }}>Showing results for {inToki ? 'toki pona' : 'english and toki pona'}</Text>}
           data={filteredDataSource}
           keyExtractor={(word) => word.entry.id.toString()}
           renderItem={({ item }) => (
