@@ -12,7 +12,16 @@ const styles = StyleSheet.create({
         margin: 10
     },
     table:{
-        borderWidth: 1,
+        borderWidth: 4,
+        borderRadius: 10,
+        shadowColor: "#000",
+            shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
     },
     tableRow:{
         flexDirection: 'row',

@@ -6,11 +6,13 @@ import * as React from 'react';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import DictionaryScreen from '../screens/Dictionary';
-import LessonScreen from '../screens/LessonScreen';
-import LessonListScreen from '../screens/LessonListScreen';
+import LessonScreen from '../screens/Lessons/LessonScreen';
+import LessonListScreen from '../screens/Lessons/LessonListScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, DictionaryParamList, LessonsParamList, PracticeParamList } from '../types';
-import PracticeMenu from '../screens/PracticeMenu';
+import PracticeMenu from '../screens/Practice/PracticeMenu';
+import PracticePhrases from '../screens/Practice/PracticePhrases';
+import PracticeVocab from '../screens/Practice/PracticeVocab';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -35,11 +37,11 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <FontAwesome5 name="brain" size={24} color={color} />,
         }}
       />
-      <BottomTab.Screen 
+      <BottomTab.Screen
         name="Practice"
         component={TabThreeNavigator}
         options={{
-          tabBarIcon: ({ color }) => <Fontisto name="lightbulb" size={30} color={color}/>,
+          tabBarIcon: ({ color }) => <Fontisto name="lightbulb" size={30} color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -81,7 +83,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="Lesson"
         component={LessonScreen}
-        options={({route}) => ({ headerTitle: `Lesson  ${route.params.LessonId+1}` })}
+        options={({ route }) => ({ headerTitle: `Lesson  ${route.params.LessonId + 1}` })}
       />
     </TabTwoStack.Navigator>
   );
@@ -89,13 +91,23 @@ function TabTwoNavigator() {
 
 const TabThreeStack = createStackNavigator<PracticeParamList>();
 
-function TabThreeNavigator(){
+function TabThreeNavigator() {
   return (
-    <TabThreeStack.Navigator>
-      <TabThreeStack.Screen 
+    <TabThreeStack.Navigator initialRouteName='PracticePhrases'>
+      <TabThreeStack.Screen
         name='PracticeMenu'
         component={PracticeMenu}
         options={{ headerTitle: 'Practice' }}
+      />
+      <TabThreeStack.Screen
+        name='PracticePhrases'
+        component={PracticePhrases}
+        options={{ headerShown: false }}
+      />
+      <TabThreeStack.Screen
+        name='PracticeVocab'
+        component={PracticeVocab}
+        options={{ headerShown: false }}
       />
     </TabThreeStack.Navigator>
   )

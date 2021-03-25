@@ -22,6 +22,7 @@ interface DictionaryItemProps {
         variations: never[];
         relations: never[];
     }
+    tooltip?: Boolean
 }
 
 export default function DictionaryItem(props: DictionaryItemProps) {

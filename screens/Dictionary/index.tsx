@@ -26,7 +26,7 @@ export default function DictionaryScreen() {
       const newData = dictionary.words.filter(function (item) {
         const toki = item.entry.form
         const def = item.translations[0].forms[0]
-        const hasToki = toki.includes(text)
+        const hasToki = toki.startsWith(text)
         const hasDef = def.includes(text)
         return (hasDef && !inToki) || hasToki;
       });
@@ -54,8 +54,8 @@ export default function DictionaryScreen() {
           returnKeyType='search'
         />
         <Switch
-          trackColor={{ false: "#767577", true: "#81b0ff" }}
-          thumbColor={inToki ? "#f5dd4b" : "#f4f3f4"}
+          trackColor={{ false: Colors[colorScheme].offset, true: Colors[colorScheme].tint }}
+          thumbColor={inToki ? Colors[colorScheme].offset : Colors[colorScheme].offset}
           ios_backgroundColor="#3e3e3e"
           onValueChange={toggle}
           value={inToki}

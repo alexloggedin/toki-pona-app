@@ -1,15 +1,15 @@
 import React from 'react'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
-import LessonText from '../../components/LessonText'
-import { View, Text } from '../../components/Themed'
+import LessonText from '../../../components/LessonText'
+import { View, Text } from '../../../components/Themed'
 import { Alert } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
-import VocabTable from '../../components/VocabTable'
+import VocabTable from '../../../components/VocabTable'
 import styles from './styles'
 import YoutubePlayer from 'react-native-youtube-iframe'
-import Data from '../../assets/data/lessons.json'
-import Colors from '../../constants/Colors'
-import useColorScheme from '../../hooks/useColorScheme';
+import Data from '../../../assets/data/lessons.json'
+import Colors from '../../../constants/Colors'
+import useColorScheme from '../../../hooks/useColorScheme';
 import { Ionicons } from '@expo/vector-icons';
 
 interface LessonScreenProps {

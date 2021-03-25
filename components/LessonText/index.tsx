@@ -1,84 +1,69 @@
 import React from 'react'
 import styles from './styles'
 import { View, Text } from '../Themed'
+import { StyleSheet } from 'react-native'
+import Markdown from 'react-native-markdown-display'
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
 
 interface LessonTextProps {
-    text: String[]
+    text: String
 }
 
 export default function LessonText(props: LessonTextProps) {
     const colorScheme = useColorScheme();
-    const generateText = (text: String[]) => {
-        return (text.map((line, i) => {
-            let textBox = {
-                flexDirection: 'row',
-                alignContent: 'center',
-                width: '95%',
-                marginHorizontal: 10,
-                marginVertical: 5
-            }
-            let spacer = {
-                paddingHorizontal: 0,
-                marginRight: 0,
-                backgroundColor: Colors[colorScheme].tint
-            }
-            let textStyle = {
-                fontStyle: 'normal',
-                fontSize: 18,
-                backgroundColor: Colors[colorScheme].background,
-                justifyContent: 'center'
-            }
-            switch (line[0]) {
-                case '>':
-                    line = line.substring(1)
-                    spacer.paddingHorizontal = 2
-                    spacer.marginRight = 10
-                    textStyle.fontStyle = 'italic'
-                    textStyle.fontSize = 16
-                    textStyle.backgroundColor = Colors[colorScheme].offset
-                    textStyle.padding = 4
-                    break;
-                case '#':
-                    line = line.substring(2)
-                    spacer.display = 'hidden'
-                    textStyle.fontWeight = 'bold'
-                    textStyle.padding = 10
-                    textStyle.borderRadius = 50
-                    textStyle.overflow = 'hidden'
-                    textStyle.fontSize = 20
-                    textStyle.justifyContent = 'center'
-                    textStyle.flex = 1,
-                    textStyle.textAlign = 'center'
-                    textStyle.color = 'black'
-                    textStyle.backgroundColor = Colors[colorScheme].tint
-                    break;
-                case '*':
-                    line = line.substring(1)
-                    spacer.paddingHorizontal = 2
-                    spacer.marginRight = 10
-                    textStyle.fontStyle = 'italic'
-                    textStyle.fontSize = 16
-                    break;
-                default:
-                    break;
-            }
-            return (
-                <View key={i} style={textBox}>
-                    <View style={spacer}>
-                    </View>
-                    <Text key={i} style={textStyle}>
-                        {line}
-                    </Text>
-                </View>
-            )
-        }))
-    }
+
+    const MDstyle = StyleSheet.create({
+        body: {
+            backgroundColor: Colors[colorScheme].background
+        },
+        heading2: {
+            marginVertical: 10,
+            backgroundColor: Colors[colorScheme].tint,
+            justifyContent: 'center',
+            fontWeight: 'normal',
+            padding: 5,
+            borderRadius: 50
+        },
+        heading4: {
+            marginVertical: 2,
+            fontWeight: 'bold',
+            padding: 5,
+            borderRadius: 50
+        },
+        blockquote: {
+            backgroundColor: Colors[colorScheme].offset,
+            borderLeftColor: Colors[colorScheme].tint,
+            borderRadius: 5,
+            marginVertical: 5,
+            shadowColor: "#000",
+            shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+        },
+        bullet_list_icon: {
+            color: Colors[colorScheme].tint,
+            fontSize: 20,
+            fontWeight: 'bold'
+        },
+        text: {
+            color: Colors[colorScheme].text
+        },
+        strong: {
+            fontWeight: 'bold',
+            color: Colors[colorScheme].tint
+        }
+    })
 
     return (
         <View style={styles.container}>
-            {generateText(props.text)}
+            <Markdown style={MDstyle}>
+                {props.text}
+            </Markdown>
         </View>
     )
 }

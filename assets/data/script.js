@@ -43,7 +43,7 @@ const subtitles = [
     `more vocabulary`,
     `this and that`,
     `prepositions and locations`,
-    `interjections, questions, commands and names`,
+    `questions, commands and names`,
     `colorful language`,
     `complex adjectives and contexts`,
     `pre-verbs and time`,
@@ -449,7 +449,7 @@ const texts = [
     
     * **u** sounds like the "oo" in "oops" or "moon".
     
-    > %info%
+    > #### info
     > The "International Phonetic Alphabet" (IPA) is a common way to write
     > down specific pronunciations of words and phrases in any language. 
     >
@@ -522,7 +522,7 @@ const texts = [
     
     > suli ona -- his/her/their greatness/size
     
-    > %info%
+    > #### info
     > Of note is the phrase "jan pona", which literally means "good person", but is
     > widely (and officially) accepted to also mean "friend".
     
@@ -542,7 +542,7 @@ const texts = [
     
     > soweli lili li wawa ala. - Little animals are not strong.
     
-    > %warning%
+    > #### warning
     > It is worth noting that the particle "li" is only removed if the subject is
     > just the word "mi" or "sina". If it has any adjectives added to it, then the
     > particle is used.
@@ -560,13 +560,13 @@ const texts = [
     
     > jan wawa li pali pona. - A strong person is working well.
     
-    > %warning%
+    > #### warning
     > There is no way to determine whether a word in such a sentence is an
     > adjective or a verb. For example, the phrase "mi moku" can mean either "I am
     > eating" or "I am food".
     
     
-    > %info%
+    > #### info
     > Verbs don't have any tense information in them. A way to specify time will be
     > explained in a later page.
     
@@ -590,7 +590,7 @@ const texts = [
     
     > mi olin e meli mi. - I love my wife.
     
-    > %warning%
+    > #### warning
     > 
     > Since the word "lukin" itself describes the act of seeing someone, rather than
     > their appearance, complimenting someone on the latter would usually be expressed
@@ -614,7 +614,7 @@ const texts = [
     
     ## Topics of conversation
     
-    > %warning%
+    > #### warning
     > There is no consensus on which of these ways is more correct, but
     > each has its own positives and negatives. Everything in this entire heading is
     > one big "dialectal difference", and the author's opinions on the differences
@@ -765,7 +765,7 @@ const texts = [
     
     > sina pona tawa mi. -- I like you. ("You are good for me.")
     
-    > %warning%
+    > #### warning
     > Since "tawa" can be both an adjective and a preposition, certain phrases can
     > be ambiguous. For example, "tomo tawa mi" can mean both "my car" and "a house,
     > from my perspective". The specific meaning will depend on context.
@@ -938,18 +938,14 @@ const texts = [
     names, either by adapting the name from their native language or coming up with
     something new.
     
-    > %info%
+    > ### info
     > As you might have noticed, personal names are prefixed with "jan". People in
     > the toki pona community may refer to themselves with their toki pona name even
     > when using other languages, in which case they'll still add "jan" at the
     > beginning.
     >
     
-    > %info%
-    > The [page 7a](7a.html) contains some more information about how
-    > unofficial words are created.
-    
-    > %warning%
+    > #### warning
     > While this isn't the most correct option, it is okay in most cases
     > to not use unofficial words and just pronounce or spell the name how you would
     > do in your (or their) native language. For example, you can refer to a person
@@ -1045,7 +1041,7 @@ const texts = [
     
     > jan pi toki utala -- a critic
     
-    > %info%
+    > #### info
     > If you prefer using the "toki [adjective]" structure for describing topics of
     > conversation (see [page 4](4.html) for that), then "pi" would also be used for
     > specifying topics that use several words:
@@ -1058,7 +1054,7 @@ const texts = [
     > ma tomo Wasintan li ma tomo lawa pi ma Mewika. -- (the city of) Washington is
     > the capital ("main city") of the United States.
     
-    > %warning%
+    > #### warning
     > While "pi" is often defined as similar to the English word "of", its usage is
     > different. It is only necessary when you're grouping several words together.
     > So, for example, "the language of good" is still "toki pona", rather than
@@ -1104,7 +1100,7 @@ const texts = [
     
     > ni la... -- In the context of all this, ...
     
-    > %info%
+    > #### info
     > The usage of "la" is very flexible, and some people use it for cases other
     > than those described before. Since toki pona is a very context-sensitive
     > language, the most important rule is just "try to get your point across".`,
@@ -1341,15 +1337,14 @@ for (i = 0; i <= 11; i++) {
     let titleindex = convert(i+1);
     titleindex = titleindex.charAt(0).toUpperCase() + titleindex.slice(1)
     const title = `Lesson ${titleindex}`
-    const lesson = texts[i].split('\n').map((s)=> (s.trim()))
     data.lessons[i] = {
         id: i,
-        title: title,
+        title,
         subtitle: subtitles[i],
         toki_title: '$Coming Soon$',
         video_id: videoIds[i],
         icon_uri: 'none yet',
-        lesson,
+        lesson: texts[i],
         vocab: vocab[i],
         exercise: exercises[i]
     }

@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
       fontSize: 15
     },
     definition:{
-      flex: 3
+      flex: 3,
+      marginLeft: 5
     },
     pos:{
       fontWeight: 'normal'

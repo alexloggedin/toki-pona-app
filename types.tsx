@@ -14,9 +14,42 @@ export type DictionaryParamList = {
 
 export type LessonsParamList = {
   LessonList: undefined;
-  Lesson: {LessonId: number};
+  Lesson: { LessonId: number };
 };
- export type PracticeParamList = {
-   PracticeMenu : undefined;
-   Practice: {LessonId: number}
- }
+export type PracticeParamList = {
+  PracticeMenu: undefined;
+  PracticePhrases: {
+    exercise: {
+      type: string,
+      problems: {
+        english: string,
+        toki: string
+      }[]
+    }
+  };
+  PracticeVocab: {
+    vocab: {
+      entry : {
+        id : number,
+        form : string
+      },
+      translations : {
+        title : string,
+        forms : string[]
+      } [],
+      tags : [ ],
+      contents : [ ],
+      variations : [ ],
+      relations : [ ]
+      }[]
+  } 
+}
+
+export type PracticeStackParamList = {
+  Page: {
+      index: number,
+      guesses: number[],
+      inToki: Boolean[]
+      problem: PracticeParamList['PracticePhrases']["exercise"]['problems'][0]  | PracticeParamList['PracticeVocab']['vocab'][0] | undefined;
+  }
+};
