@@ -6,6 +6,7 @@ export type RootStackParamList = {
 export type BottomTabParamList = {
   Lessons: undefined;
   Dictionary: undefined;
+  Practice: undefined;
 };
 
 export type DictionaryParamList = {
@@ -51,5 +52,9 @@ export type PracticeStackParamList = {
       guesses: number[],
       inToki: Boolean[]
       problem: PracticeParamList['PracticePhrases']["exercise"]['problems'][0]  | PracticeParamList['PracticeVocab']['vocab'][0] | undefined;
+  },
+  Results:{
+    index: number,
+    guesses: number[],
   }
 };

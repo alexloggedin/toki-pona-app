@@ -15,7 +15,7 @@ export default StyleSheet.create({
         position: 'absolute',
         alignSelf: 'center',
         borderRadius: 10,
-        top: 100,
+        top: '45%',
         height: 150,
         margin: 5,
         flex: 1,

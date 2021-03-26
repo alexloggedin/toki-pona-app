@@ -25,7 +25,6 @@ export default function LessonScreen(props: LessonScreenProps) {
     const colorScheme = useColorScheme();
     const ref = React.useRef(null);
     const [playing, setPlaying] = React.useState(false);
-    const [hidden, setHidden] = React.useState(false);
     const id = props.route.params.LessonId
     const { title, subtitle, video_id, vocab, lesson } = Data["lessons"][id]
 

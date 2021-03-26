@@ -42,20 +42,18 @@ export default function AnnotatedText(props: AnnotatedProps) {
         tokens.map((t, i) => (
             t.map((w, j) => {
                 return (
-                    <View key={i + 1 * j + 1}>
-                        <Text style={[styles.text, props.style, { textDecorationColor: Colors[colorScheme].tint }]}
+                        <Text key={i + 1 * j + 1} style={[styles.text, props.style, { textDecorationColor: Colors[colorScheme].tint }]}
                             selectable={true}
                             onPress={() => toggleWord(w)}
                         >
                             {w}
                         </Text>
-                    </View>
                 )
             })
         ))
     )
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, props.style]}>
             { tokens ?
                 generateText(tokens)
                 :

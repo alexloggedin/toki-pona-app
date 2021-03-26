@@ -4,6 +4,7 @@ import styles from './styles'
 import { PracticeParamList, PracticeStackParamList } from "../../../types";
 import { createStackNavigator } from '@react-navigation/stack';
 import PhraseScreen from '../PhraseScreen';
+import PracticeResults from '../PracticeResults';
 
 
 
@@ -17,17 +18,31 @@ export default function PracticePhrases(props: PracticeParamList['PracticePhrase
         guesses.push(0)
     }
 
+    const initialParams = {
+        index: 0,
+        guesses,
+        inToki,
+        problems: exercise.problems,
+        exit: {
+            stack: 'Practice',
+            screen: 'PracticeMenu'
+        }
+    }
+
     return (
-        <Practice.Navigator>
+        <Practice.Navigator
+            initialRouteName="Page"
+        >
             <Practice.Screen
                 name='Page'
-                component={() =>
-                    <PhraseScreen 
-                        index={0}
-                        guesses={guesses}
-                        inToki={inToki}
-                        problem={exercise.problems[0]}
-                    />}
+                component={PhraseScreen}
+                initialParams={initialParams}
+                options={{ headerShown: false }}
+            />
+            <Practice.Screen
+                name='Results'
+                component={PracticeResults}
+                initialParams={initialParams}
                 options={{ headerShown: false }}
             />
         </Practice.Navigator>
