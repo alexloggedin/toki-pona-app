@@ -11,7 +11,11 @@ export default function PracticeMenu() {
 
     return (
         <View style={styles.container}>
-            <Text>Create A Practice Here</Text>
+                <TouchableOpacity style={styles.phrase}>
+                    <Text style={styles.title}>
+                        Practice Phrases
+                    </Text>
+                </TouchableOpacity>
         </View>
     )
 }

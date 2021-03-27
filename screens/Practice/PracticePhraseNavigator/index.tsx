@@ -3,14 +3,14 @@ import { View, Text } from '../../../components/Themed'
 import styles from './styles'
 import { PracticeParamList, PracticeStackParamList } from "../../../types";
 import { createStackNavigator } from '@react-navigation/stack';
-import PhraseScreen from '../PhraseScreen';
+import PhraseScreen from '../PhrasePracticeScreen';
 import PracticeResults from '../PracticeResults';
 
 
 
 const Practice = createStackNavigator<PracticeStackParamList>();
 
-export default function PracticePhrases(props: PracticeParamList['PracticePhrases']) {
+export default function PracticePhraseNavigator(props: PracticeParamList['PracticePhrases']) {
     let inToki: Boolean[] = []
     let guesses: number[] = []
     for (let index = 0; index < exercise.problems.length; index++) {

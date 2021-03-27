@@ -46,8 +46,20 @@ export default function PhraseScreen(props: PhraseScreenProps) {
         return true
     }
 
+    const cleanPage = () => {
+        setText('')
+        setCorrect(false)
+        setSumbit(false)
+    }
+
     const navigateAway = () => {
         const { stack, screen, params } = exit;
+        cleanPage()
+        navigation.reset({
+            index: 2,
+            routes: [{ name: 'Page' }],
+        });
+
         if (props.route.params.exit.params) {
             navigation.navigate(stack, { screen })
         } else {
@@ -60,11 +72,19 @@ export default function PhraseScreen(props: PhraseScreenProps) {
         const name = correct ? 'checkmark' : 'close'
         const backgroundColor = correct ? 'lightgreen' : '#ffb3b3'
         return (
-            <View style={[styles.confirmation, { backgroundColor }]}>
-                <Ionicons name={name} size={32} color={color} />
-                <Text style={{ color, fontWeight: 'bold', marginHorizontal: 10 }}>
-                    {correct ? 'Correct!' : 'Incorrect!'}
-                </Text>
+            <View style={[{flexDirection: 'column', alignContent: 'flex-start' }]}>
+                <View style={[styles.confirmation, {backgroundColor}]}>
+                    <Ionicons name={name} size={32} color={color} />
+                    <Text style={{ color, fontWeight: 'bold', marginHorizontal: 10 }}>
+                        {correct ? 'Correct!' : 'Incorrect!'}
+                    </Text>
+                </View>
+                <View style={{margin: 10, marginVertical: 32}}>
+                    <Text style={{fontSize: 20, fontWeight: 'bold'}}>Translation: </Text>
+                    <Text location={'62%'} inToki={!inToki[index]} style={{fontSize: 18, marginVertical: 2}}>
+                        {correct && (!inToki[index] ? problems[index].toki : problems[index].english)}
+                    </Text>
+                </View>
             </View>
         )
     }
@@ -75,9 +95,7 @@ export default function PhraseScreen(props: PhraseScreenProps) {
         if (!correct) {
             guesses[index]++
         } else {
-            setText('')
-            setCorrect(false)
-            setSumbit(false)
+            cleanPage()
             if (index === problems.length - 1) {
                 navigation.navigate('Results', {
                     guesses: guesses,
@@ -100,7 +118,7 @@ export default function PhraseScreen(props: PhraseScreenProps) {
         <View style={styles.container}>
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{ flex: 1, width: '100%' }}>
                 <View style={styles.header}>
-                    <Ionicons name="close" size={48} color={Colors[colorScheme].text} style={styles.close} onPress={navigateAway} />
+                    <Ionicons name="close" size={48} color={Colors[colorScheme].text} style={styles.close} onPress={() => navigation.navigate('PracticeMenu')} />
                     <View style={styles.bar}>
                         <ProgressBar
                             progress={(index) / (inToki.length)}
@@ -117,7 +135,9 @@ export default function PhraseScreen(props: PhraseScreenProps) {
                 </View>
                 <View style={[styles.content, { backgroundColor: Colors[colorScheme].offset }]}>
                     <Text style={styles.title}>Translate This Sentence</Text>
-                    <AnnotatedText style={{ fontSize: 28, backgroundColor: Colors[colorScheme].offset }}>{problems[index].toki}</AnnotatedText>
+                    <AnnotatedText location={'62%'} inToki={inToki[index]} style={{ fontSize: 28, backgroundColor: Colors[colorScheme].offset }}>
+                        {inToki[index] ? problems[index].toki : problems[index].english}
+                    </AnnotatedText>
                     <TextInput
                         style={[styles.input, { backgroundColor: Colors[colorScheme].offset, color: Colors[colorScheme].text, borderColor: Colors[colorScheme].tint }]}
                         onChangeText={setText}
@@ -129,7 +149,6 @@ export default function PhraseScreen(props: PhraseScreenProps) {
                         returnKeyType='done'
                     />
                     {isSubmit && renderAnswer()}
-                    <Text>{` Index: ${index}\n Length: ${problems[problems.length - 1].toki} \n Guesses: ${guesses[index]}`}</Text>
                 </View>
                 <View style={styles.footer}>
                     <TouchableOpacity onPress={handleSubmit} style={[styles.submit, { backgroundColor: Colors[colorScheme].tint }]}>

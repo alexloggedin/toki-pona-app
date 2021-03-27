@@ -26,7 +26,7 @@ export default function LessonScreen(props: LessonScreenProps) {
     const ref = React.useRef(null);
     const [playing, setPlaying] = React.useState(false);
     const id = props.route.params.LessonId
-    const { title, subtitle, video_id, vocab, lesson } = Data["lessons"][id]
+    const { title, subtitle, video_id, vocab, lesson, exercise } = Data["lessons"][id]
 
 
     const onStateChange = React.useCallback((state) => {
@@ -43,7 +43,38 @@ export default function LessonScreen(props: LessonScreenProps) {
     const lastPage = () => {
         navigation.navigate('Lesson', { LessonId: id - 1 })
         ref.current.scrollTo({ x: 0, y: 0, animated: true })
+    
     }
+    const navigateExercise = () => {
+        let inToki: Boolean[] = []
+        let guesses: number[] = []
+        for (let index = 0; index < exercise.problems.length; index++) {
+            inToki.push(Math.random() < 0.5);
+            guesses.push(0)
+        }
+        const params = {
+            index: 0,
+            guesses,
+            inToki,
+            problems: exercise.problems,
+            exit: {
+                stack: 'Lessons',
+                screen: 'Lesson',
+                params: {
+                    LessonId: id
+                }
+            }
+        }
+        navigation.navigate('Practice', {
+            screen: 'PracticePhrases',
+            params: {
+                screen: 'Page',
+                params
+            }
+        
+        })
+    }
+
 
     return (
         <View style={styles.container}>
@@ -66,6 +97,11 @@ export default function LessonScreen(props: LessonScreenProps) {
                 </View>
                 <VocabTable vocab={vocab} />
                 <LessonText text={lesson} />
+                <TouchableOpacity style={[styles.link, styles.exercise, { borderColor: Colors[colorScheme].tint }]} onPress={navigateExercise}>
+                    <Text style={styles.exerciseText}>
+                        Try Exercise
+                    </Text>
+                </TouchableOpacity>
                 <View style={styles.footer}>
                     <TouchableOpacity onPress={() => lastPage()}>
                         <View style={[styles.link, { backgroundColor: Colors[colorScheme].tint }]}>

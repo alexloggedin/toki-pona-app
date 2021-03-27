@@ -7,7 +7,7 @@ import Colors from '../../../constants/Colors';
 import useColorScheme from '../../../hooks/useColorScheme';
 import { useNavigation } from '@react-navigation/native';
 import { PracticeStackParamList } from '../../../types'
-import styles from '../PhraseScreen/styles'
+import styles from '../PhrasePracticeScreen/styles'
 import { default as res } from './styles'
 
 interface PracticeResultsProps {
@@ -38,12 +38,19 @@ export default function PracticeResults(props: PracticeResultsProps) {
         return count
     }
 
-    const navigateAway = (i: number) => {
+    const navigateAway = () => {
         const { stack, screen, params } = exit;
         if (props.route.params.exit.params) {
             navigation.navigate(stack, { screen })
         } else {
-            navigation.navigate(stack, { screen, params: params?.LessonId+i })
+            navigation.reset({
+                index: 2,
+                routes: [{ name: 'Practice',
+                        params: {
+                            screen: 'PracticeMenu'
+                        } }],
+            });
+            navigation.navigate(stack, { screen, params: params?.LessonId })
         }
     }
 
@@ -52,7 +59,7 @@ export default function PracticeResults(props: PracticeResultsProps) {
             <View style={styles.container}>
                 <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={{ flex: 1, width: '100%' }}>
                     <View style={styles.header}>
-                        <Ionicons name="close" size={48} color={Colors[colorScheme].text} style={styles.close} onPress={() => navigateAway(0)} />
+                        <Ionicons name="close" size={48} color={Colors[colorScheme].text} style={styles.close} onPress={() => navigation.navigate('PracticeMenu')} />
                         <View style={styles.bar}>
                             <ProgressBar
                                 progress={1}
@@ -76,9 +83,9 @@ export default function PracticeResults(props: PracticeResultsProps) {
                         <Text style={res.caption}> Correct On The 1st Try</Text>
                     </View>
                     <View style={styles.footer}>
-                        <TouchableOpacity onPress={() => navigateAway(1)} style={[styles.submit, { backgroundColor: Colors[colorScheme].tint }]}>
+                        <TouchableOpacity onPress={navigateAway} style={[styles.submit, { width: '80%' , backgroundColor: Colors[colorScheme].tint }]}>
                             <Text style={[styles.submitText, { color: 'white' }]}>
-                                {exit.params ? 'Next Lesson' : 'Exit'}
+                                {exit.params ? 'Back To Lessons' : 'Exit'}
                         </Text>
                         </TouchableOpacity>
                     </View>

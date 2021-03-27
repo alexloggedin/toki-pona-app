@@ -27,6 +27,21 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: -50
     },
+    exercise:{
+        margin: 20,
+        shadowColor: 'rgba(0,0,0, .4)', // IOS
+        shadowOffset: { height: 1, width: 1 }, // IOS
+        shadowOpacity: 1, // IOS
+        shadowRadius: 1, //IOS
+        elevation: 2, // Android
+        borderWidth: 2,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    exerciseText:{
+        fontSize: 24
+    },
     footer:{
         flexDirection: 'row',
         justifyContent:'space-between',

@@ -11,8 +11,8 @@ import LessonListScreen from '../screens/Lessons/LessonListScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, DictionaryParamList, LessonsParamList, PracticeParamList } from '../types';
 import PracticeMenu from '../screens/Practice/PracticeMenu';
-import PracticePhrases from '../screens/Practice/PracticePhrases';
-import PracticeVocab from '../screens/Practice/PracticeVocab';
+import PracticePhrases from '../screens/Practice/PracticePhraseNavigator';
+import PracticeVocab from '../screens/Practice/PracticeVocabNavigator';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -93,7 +93,7 @@ const TabThreeStack = createStackNavigator<PracticeParamList>();
 
 function TabThreeNavigator() {
   return (
-    <TabThreeStack.Navigator initialRouteName='PracticePhrases'>
+    <TabThreeStack.Navigator initialRouteName='PracticeMenu' >
       <TabThreeStack.Screen
         name='PracticeMenu'
         component={PracticeMenu}

@@ -81,7 +81,7 @@ const exercises = [
         type: 't',
         problems: [
             {english: 'My wife is good.', toki: 'meli mi li pona.'},
-            {english: "Your husband is (big/important).", toki: 'mije sina li suli.'},
+            {english: "Your husband is (big / important).", toki: 'mije sina li suli.'},
             {english: 'My dad is strong.', toki: 'mama mije mi li wawa.'},
             {english: 'All animals are good.', toki: 'soweli ale li pona.'},
             {english: 'Fruits are important food.', toki: 'kili li moku suli.'},
@@ -95,12 +95,12 @@ const exercises = [
     {
         type: 't',
         problems: [
-            {english: "A child is crying (emitting eye water).", toki: ""},
-            {english: "(He/she/they) look at a document.", toki: ""},
-            {english: "The bad animal is attacking a woman.", toki: ""},
-            {english: "The warrior is eating a big (fruit/vegetable/mushroom).", toki: ""},
-            {english: "Little animals are drinking water.", toki: ""},
-            {english: "I am (watering/cleaning) something big.", toki: ""},
+            {english: "A child is crying (emitting eye water).", toki: "jan lili li pana e telo lukin."},
+            {english: "(He / she / they) look at a document.", toki: "ona li lukin e lipu."},
+            {english: "The bad animal is attacking a woman.", toki: "soweli ike li utala e meli."},
+            {english: "The warrior is eating a big (fruit / vegetable / mushroom).", toki: "jan utala li moku e kili suli."},
+            {english: "Little animals are drinking water.", toki: "soweli lili li moku e telo."},
+            {english: "I am (watering / cleaning) something big.", toki: "mi telo e ijo suli."},
             {english: "She loves every person.", toki: "ona li olin e jan ale."},
             {english: "The bathroom ('house of water') is good.", toki: "tomo telo li pona."},
             {english: "I hand out documents.", toki: "mi pana e lipu."},
@@ -119,11 +119,11 @@ const exercises = [
             {english: "An important person is looking at the city and writing things down.", toki: "jan suli li lukin e ma tomo, li sitelen e ijo."},
             {english: "The land has weeds ('bad plants')", toki: "ma li jo e kasi ike."},
             {english: "Small bugs are important and good.", toki: "pipi lili li suli, li pona."},
-            {english: "Your city doesn't have any workers", toki: ""},
-            {english: "My husband doesn't work, (only) eats and fights.", toki: ""},
-            {english: "My homeland ('original land') is large.", toki: ""},
-            {english: "Your painting looks good.", toki: ""},
-            {english: "My friend has fish and fruit and makes good food.", toki: ""},
+            {english: "Your city doesn't have any workers", toki: "ma tomo sina li jo ala e jan pali."},
+            {english: "My husband doesn't work, (only) eats and fights.", toki: "mije mi li pali ala, li moku, li utala."},
+            {english: "My homeland ('original land') is large.", toki: "ma mama mi li suli."},
+            {english: "Your painting looks good.", toki: "sitelen sina li pona lukin."},
+            {english: "My friend has fish and fruit and makes good food.", toki: "jan pona mi li jo e kala e kili li pali e moku pona."},
         ]
     },
     {
@@ -159,7 +159,7 @@ const exercises = [
     {
         type: 't',
         problems: [
-            {english: "Don't eat this fruit/vegetable/mushroom, Lisa!", toki: "jan Lisa o, moku ala e kili ni a!"},
+            {english: "Don't eat this fruit/vegetable / mushroom, Lisa!", toki: "jan Lisa o, moku ala e kili ni a!"},
             {english: "The Kansas team defeated all other teams.", toki: "kulupu Kensa li anpa e kulupu ale ante."},
             {english: "Don't think that workers are lowly before the leaders.", toki: "o toki insa ala e ni: jan pali li anpa tawa jan lawa."},
             {english: "Why did you do this?", toki: "sina pali e ni tan seme?"},
